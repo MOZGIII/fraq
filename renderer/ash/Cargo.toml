@@ -1,0 +1,18 @@
+[package]
+name = "fraq-renderer-ash"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+ash = "0.33"
+ash-window = "0.7"
+winit = { git = "https://github.com/rust-windowing/winit", rev = "1b3b82a3c1369c5248a2e6a251230ba6c615e918" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+structopt = "0.3.20"
+cfg-if = "1.0.0"
+fraq-shader-mandelbrot = { path = "../../shader/mandelbrot" }
+fraq-shader-shared = { path = "../../shader/shared" }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+ash-molten = { version = "0.11.0", features = ["pre-built"] }

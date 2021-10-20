@@ -1,0 +1,11 @@
+[package]
+name = "fraq-math-mandelbrot"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+num-traits = { version = "*", default-features = false }
+
+[features]
+default = ["std"]
+std = []

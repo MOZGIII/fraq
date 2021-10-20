@@ -1,0 +1,20 @@
+[package]
+name = "fraq-shader-mandelbrot"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["lib", "dylib"]
+
+[dependencies]
+fraq-math-mandelbrot = { path = "../../math/mandelbrot", default-features = false }
+fraq-shader-shared = { path = "../shared", default-features = false }
+spirv-std = { git = "https://github.com/EmbarkStudios/rust-gpu", features = ["glam"] }
+
+[build-dependencies]
+spirv-builder = { git = "https://github.com/EmbarkStudios/rust-gpu" }
+
+[features]
+# TODO: add "std" here, and fix the shader builder to allow passing features
+default = []
+# std = ["fraq-math-mandelbrot/std"]
